@@ -162,14 +162,10 @@ if __name__ == '__main__':
                 last = time.time()
         elif not direct_run and globals().get('ip_file') and globals().get('con_file'):
                 # new conf
-                if os.path.exists('confend'):
-                    os.popen('rm -f confend')
+                print("\033[1;31;40mcheck config:\033[0m")
                 for i in open(con_file).readlines():
                         if not i.startswith('#') and not i.startswith('\n'):
-                                conf2 = open('confend', 'a')
-                                conf2.write(i)
-                                conf2.close()
-                print("\033[1;31;40mcheck config:\n%s\033[0m" % open('confend').read())
+                                print("\033[1;31;40m%s\033[0m" % i)
                 # ready
                 yn = input("are you continue(y/n)")
                 if yn == 'y':

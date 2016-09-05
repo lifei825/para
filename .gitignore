@@ -1,4 +1,6 @@
 *.log
+*.list
+*.conf
 comfile
 confend
 .idea/*
